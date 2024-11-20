@@ -250,3 +250,47 @@ In this lab, we will learn how to handle account lockouts and password resets, e
 <br />
 <img width="283" alt="Screenshot 2024-11-20 at 3 58 40 PM" src="https://github.com/user-attachments/assets/da74c018-8f70-4daf-b583-29d3f37e952d">
 </p>
+
+**Observing Security Logs in the Domain Controller**
+
+In this step, we will review the security logs on the domain controller (DC-1) to monitor failed login attempts and other user activities within Active Directory. This process helps in ensuring the security and integrity of the network by identifying potential unauthorized access attempts.
+
+### **Steps:**
+
+1. **Log into DC-1 as an Administrator:**
+   
+   - **Access DC-1:**
+     - Open **Remote Desktop Protocol (RDP)** on your local machine.
+     - Enter **DC-1's public IP address** and click **Connect**.
+     - Authenticate using your **domain administrator credentials** (e.g., `mydomain.com\jane_admin` and password).
+
+2. **Open Event Viewer:**
+   
+   - **Launch Event Viewer:**
+     - Click the **Start** button located at the bottom left corner of the screen.
+     - In the search bar, type **"Event Viewer"** and press **Enter**.
+     - Alternatively, press **Win + R** to open the **Run** dialog, type **`eventvwr.msc`**, and press **Enter**.
+
+3. **Navigate to Security Logs:**
+   
+   - **Access Security Logs:**
+     - In the **Event Viewer** window, expand **Windows Logs** in the left pane.
+     - Click on **Security** to view security-related events.
+
+4. **Filter and Review Failed Login Attempts:**
+   
+   - **Apply a Filter for Failed Logins:**
+     - In the **Actions** pane on the right, click **Filter Current Log...**.
+     - In the **Filter Current Log** dialog, enter **`4625`** in the **<All Event IDs>** field to filter for failed login attempts.
+     - Click **OK** to apply the filter.
+   
+   - **Analyze the Logs:**
+     - Review the filtered events to identify repeated failed login attempts.
+     - Pay attention to details such as the **Account Name**, **Source Network Address**, and **Time Created** to assess potential security threats.
+<p>
+<img width="1800" alt="Screenshot 2024-11-20 at 4 13 38 PM" src="https://github.com/user-attachments/assets/06491718-587d-4218-9479-de250545ff14">
+</p>
+
+**Summary of Account Lockout and Password Management**
+
+In this lab, we configured account lockout and password policies using the Group Policy Management Console on our domain controller to enhance security within Active Directory. We simulated account lockouts by making multiple failed login attempts with a user account and verified these events through the security logs. Additionally, we learned how to reset locked accounts, enable or disable user accounts, and monitor authentication and security logs to maintain a secure network environment.
