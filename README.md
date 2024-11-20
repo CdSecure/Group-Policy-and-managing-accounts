@@ -100,19 +100,6 @@ In this step, we will configure the domain lockout policy using the Group Policy
      - Click **OK** to attempt the login.
      - **Repeat this process 10 times** to trigger the account lockout policy.
      - After **5 failed attempts**, the account should be locked, and a message indicating the lockout should appear.
-
-4. **Verify Account Lockout in Security Logs:**
-   
-   - **Access Event Viewer on DC-1:**
-     - On DC-1, click the **Start** button.
-     - Type **"Event Viewer"** in the search bar and press **Enter**.
-
-   - **Navigate to Security Logs:**
-     - In the **Event Viewer** window, expand **Windows Logs** and select **Security**.
-
-   - **Review Lockout Events:**
-     - Look for **Event ID 4740**, which indicates an account lockout.
-     - Confirm that the lockout was triggered for the selected user account (`jdoe`).
 <p>
 <img width="442" alt="Screenshot 2024-11-19 at 5 44 14 PM" src="https://github.com/user-attachments/assets/1e1956fd-528b-45d3-9610-6fe162b71235">
 <br />
